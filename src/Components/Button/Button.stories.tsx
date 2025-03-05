@@ -7,6 +7,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     children: { control: 'text' },
     variant: { control: 'radio', options: ['primary', 'secondary'] },
+    block: { control: 'radio', options: [true, false] }
   },
 };
 
@@ -17,6 +18,7 @@ export const Primary: Story = {
   args: {
     children: 'Primary Button',
     variant: 'primary',
+    block: false
   },
 };
 
@@ -24,5 +26,6 @@ export const Secondary: Story = {
   args: {
     children: 'Secondary Button',
     variant: 'secondary',
+    block: false
   },
 };
