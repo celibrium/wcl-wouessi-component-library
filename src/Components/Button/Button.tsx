@@ -14,8 +14,9 @@ const Button = ({ children, className, variant = 'primary', icon }: ButtonProps)
 
 export type ButtonProps = {
   children: ReactNode;
-  className?: string;
-  variant?: 'primary' | 'secondary';
+  className?: string,
+  variant?: 'primary' | 'secondary',
+  block?: boolean
   icon?: ReactNode; //  Icon is now a ReactNode, so it can accept strings or React elements
 };
 

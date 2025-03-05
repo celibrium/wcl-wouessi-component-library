@@ -7,6 +7,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     children: { control: 'text' },
     variant: { control: 'radio', options: ['primary', 'secondary'] },
+    block: { control: 'radio', options: [true, false] }
   },
 };
 
@@ -17,19 +18,14 @@ export const Small: Story = {
   args: {
     children: 'Commit without compromise',
     variant: 'primary',
+    block: false
   },
 };
 
 export const Medium: Story = {
   args: {
-    children: 'Commit without compromise',
-    variant: 'primary',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    children: 'Commit without compromise',
-    variant: 'primary',
+    children: 'Secondary Button',
+    variant: 'secondary',
+    block: false
   },
 };
