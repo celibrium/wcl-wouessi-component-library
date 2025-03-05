@@ -2,12 +2,10 @@
 import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
 import './App.css'
 import Button from './Components/Button';
-import { Icon } from './Components/Icon';
 
 const Route1 = () => (
   <div>
     <h1>Route 1</h1> 
-    <Icon name="CaretCircleRight" size={96}/> 
     <nav>
     <NavLink to="/">Route 1</NavLink> | {' '}
     <NavLink to="/route2">Route 2</NavLink>

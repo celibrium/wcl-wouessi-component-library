@@ -7,7 +7,7 @@ export default {
   component: Icon,
   argTypes: {
     name: {
-      control: { type: "select", options: ["chats-teardrop", "speaker-high", "megaphone", "caret-circle-right"] },
+      control: { type: "select", options: ["ChatsTeardrop", "SpeakerHigh", "Megaphone", "CaretCircleRight"] },
     },
     size: { control: { type: "number", min: 8, max: 100 } },
     color: { control: "color" },
@@ -18,7 +18,7 @@ const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  name: "chats-teardrop",
+  name: "ChatsTeardrop",
   size: 24,
   color: "#000",
 };
