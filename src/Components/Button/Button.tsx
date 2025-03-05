@@ -3,8 +3,9 @@ import styles from './Button.module.scss';
 import clsx from 'clsx';
 
 const Button = ({ children, className, variant = 'primary', icon }: ButtonProps) => {
+  const btnClassName = `btn ${className}`;
   return (
-    <button className={clsx(styles.btn, className, variant === 'primary' && styles.primary)}>
+    <button className={clsx(styles.btn, btnClassName, variant === 'primary' && styles.primary)}>
       {icon && <span className={styles.icon}>{icon}</span>} {/* Render icon as a ReactNode */}
       {children}
     </button>
