@@ -13,16 +13,23 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<ButtonProps>;
 
-export const Primary: Story = {
+export const Small: Story = {
   args: {
-    children: 'Primary Button',
+    children: 'Commit without compromise',
     variant: 'primary',
   },
 };
 
-export const Secondary: Story = {
+export const Medium: Story = {
   args: {
-    children: 'Secondary Button',
-    variant: 'secondary',
+    children: 'Commit without compromise',
+    variant: 'primary',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Commit without compromise',
+    variant: 'primary',
   },
 };
