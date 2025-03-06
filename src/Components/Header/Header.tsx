@@ -1,22 +1,23 @@
-import React, { ReactNode } from 'react';
+import React, { JSX, ReactNode } from 'react';
 import styles from './Header.module.scss';
 import clsx from 'clsx';
 
 export type HeaderProps = {
   children: ReactNode;
   className?: string;
-  level?: 1 | 2 | 3 | 4;
+  level?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 };
 
 const Header = ({ children, className, level = 1 }: HeaderProps) => {
+  const Tag = level === 7 ? 'p' : (`h${level}` as keyof JSX.IntrinsicElements);
   const headerClassName = clsx(
     styles.header,
-    'header',
     className,
-    level === 1 && styles.primary
+    level === 7 ? styles.h7 : styles[`h${level}`]
   );
   
-  return <header className={headerClassName}>{children}</header>;
+  
+  return <Tag className={headerClassName}>{children}</Tag>;
 };
 
 export default Header;
