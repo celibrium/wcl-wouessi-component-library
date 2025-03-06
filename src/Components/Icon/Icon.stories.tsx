@@ -7,7 +7,11 @@ export default {
   component: Icon,
   argTypes: {
     name: {
-      control: { type: "select", options: ["ChatsTeardrop", "SpeakerHigh", "Megaphone", "CaretCircleRight"] },
+      control: {
+        type: "select",
+      },
+      options: ["ChatsTeardrop", "SpeakerHigh", "Megaphone", "CaretCircleRight"],
+      defaultValue: "ChatsTeardrop", // Ensure a default value is set
     },
     size: { control: { type: "number", min: 8, max: 100 } },
     color: { control: "color" },

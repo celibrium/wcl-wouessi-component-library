@@ -1,31 +1,34 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Button, { ButtonProps } from './Button';
+import type { Meta, StoryFn } from "@storybook/react";
+import Button, { ButtonProps } from "./Button";
 
-const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+export default {
+  title: "Components/Button",
   component: Button,
   argTypes: {
-    children: { control: 'text' },
-    variant: { control: 'radio', options: ['primary', 'secondary'] },
-    block: { control: 'radio', options: [true, false] }
+    children: { control: "text" },
+    variant: {
+      control: "radio",
+      options: ["primary", "secondary", "tertiary"],
+    },
+    block: {
+      control: "boolean",
+      defaultValue: false,
+      description: "---- block description ----",
+      table: {
+        type: { summary: "boolean" }, // Add type summary for documentation
+        defaultValue: { summary: "false" }, // Optional: Show default value
+      },
+    },
   },
-};
+} as Meta;
 
-export default meta;
-type Story = StoryObj<ButtonProps>;
+const Template: StoryFn<ButtonProps> = (args) => (
+  <Button {...args}>{args.children}</Button>
+);
 
-export const Small: Story = {
-  args: {
-    children: 'Commit without compromise',
-    variant: 'primary',
-    block: false
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    children: 'Secondary Button',
-    variant: 'secondary',
-    block: false
-  },
+export const Small = Template.bind({});
+Small.args = {
+  children: "Commit without compromise",
+  variant: "primary",
+  block: false,
 };
