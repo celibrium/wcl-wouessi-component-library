@@ -2,6 +2,14 @@ import React, { JSX, ReactNode } from 'react';
 import styles from './Header.module.scss';
 import clsx from 'clsx';
 
+
+/**
+ * TODO:
+ * Performance optimization for:
+ * - Rendering
+ * - Algorythm
+ * - Accessibility
+ */
 export type HeaderProps = {
   children: ReactNode;
   className?: string;
