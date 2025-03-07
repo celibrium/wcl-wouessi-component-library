@@ -1,45 +1,77 @@
+@use "../../styles/colors";
 .btn {
-  border: 3px solid turquoise;
-
+  border: 1px solid var(--primary-700);
+  border-radius: 30px;
+  padding: 8px 12px 8px 16px;
+  font-weight: normal;
 }
 
 .block {
-  border: 30px solid orange;
+  border: 30px solid orange !important;
   width: 100%;
 }
 
 .primary {
-  background-color: green
+  background-color: var(--primary-700);
 }
 
 .secondary {
-  background-color: red;
+  background-color: var(--neutral-100);
+  color: var(--primary-700);
 }
 
 .tertiary {
-  background-color: yellow;
+  background-color: var(--neutral-100);
+  color: var(--neutral-900);
+  border: 1px solid var(--neutral-100);
+  text-decoration: underline;
 }
 
 .small {
-  padding: 1;  
-  font-size: 1;  
-  gap: 1;  
-  height: 1;  
+  padding: 1;
+  font-size: 1;
+  gap: 1;
+  height: 1;
 
 }
 
 .medium {
-  padding: 1;  
-  font-size: 1; 
-  gap: 1; 
-  height: 1; 
+  padding: 1;
+  font-size: 1;
+  gap: 1;
+  height: 1;
 
 }
 
 .large {
-  padding: 1; 
+  padding: 1;
   font-size: 1;
-  gap: 1; 
+  gap: 1;
   height: 1;
 
 }
+
+
+.btnIcon {
+  border: 5px dashed chocolate;
+}
+
+// .iconOnly {
+//   border: none;
+//   background: none;
+//   padding: 0;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .iconOnly:focus{
+//   outline: none;
+//   box-shadow: none;
+// }
+
+// .largeIcon {
+//   width: 150px; 
+//   height: 150px;
+//   fill: #2B03A2; 
+// }

@@ -1,10 +1,6 @@
 import React from "react";
+import { iconList } from "../_export-helpers";
 import styles from "./Icon.module.scss"; 
-// Import all SVGs from assets
-import CaretCircleRight from "../../assets/CaretCircleRight.svg?react";
-import ChatsTeardrop from "../../assets/ChatsTeardrop.svg?react";
-import Megaphone from "../../assets/Megaphone.svg?react";
-import SpeakerHigh from "../../assets/SpeakerHigh.svg?react";
 
 
 /**
@@ -27,7 +23,7 @@ const Icon = ({
   }
 
   // casting the icon by name
-  const SvgIcon = iconsList[name];
+  const SvgIcon = iconList[name];
 
   return (
     <SvgIcon
@@ -41,16 +37,9 @@ const Icon = ({
   );
 };
 
-// List of icons to be rendered as svg
-const iconsList = {
-  CaretCircleRight,
-  ChatsTeardrop,
-  Megaphone,
-  SpeakerHigh,
-};
 
 export type IconProps = {
-  name?: keyof typeof iconsList;
+  name?: keyof typeof iconList;
   className?: string;
   size?: number;
   color?: string;
