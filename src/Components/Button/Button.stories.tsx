@@ -1,15 +1,20 @@
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 import Button, { ButtonProps } from "./Button";
+
+const ExampleIcon = () => <span role="img" aria-label="star">⭐</span>;
+
 
 export default {
   title: "Components/Button",
   component: Button,
   argTypes: {
-    children: { control: "text" },
-    variant: {
-      control: "radio",
-      options: ["primary", "secondary", "tertiary"],
+    children: { control: 'text' },
+    variant: { control: 'radio', options: ['primary', 'secondary'] },
+    size: {
+      control: { type: 'radio' },
+      options: ['small', 'medium', 'large'],
     },
+    icon: { control: 'object' }, // 
     block: {
       control: "boolean",
       defaultValue: false,
@@ -31,4 +36,30 @@ Small.args = {
   children: "Commit without compromise",
   variant: "primary",
   block: false,
+};
+
+export const ButtonWithIcon: Story = {
+  args: {
+    children: 'Button with Icon',
+    variant: 'primary',
+    icon: <ExampleIcon />, 
+  },
+};
+
+export const Small: Story = {
+  args: {
+    children: 'Small Button',
+    variant: 'primary',
+    size: 'small',
+    icon: <ExampleIcon />, 
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Large Button',
+    variant: 'primary',
+    size: 'large',
+    icon: <ExampleIcon />,
+  },
 };

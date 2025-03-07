@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import styles from './Button.module.scss';
 import clsx from 'clsx';
+import styles from './Button.module.css';
 
 
 /**
@@ -15,7 +15,8 @@ const Button = ({
   icon, 
   className = '', 
   variant = 'primary', 
-  block = false 
+  block = false,
+  size = 'medium'
 }: ButtonProps) => {
 
   let btnVariantClass = '';
@@ -25,7 +26,9 @@ const Button = ({
     case 'secondary': btnVariantClass = styles.secondary; break;
     case 'tertiary': btnVariantClass = styles.tertiary; break;
   }
-
+//          size === 'small' && styles.small,
+//         size === 'medium' && styles.medium, 
+ //         size === 'large' && styles.large
 
   const blockClass = block ? styles.block : '';            // Assign block class if button is a block
   const btnClassName = `btn ${blockClass} ${btnVariantClass} ${className}`;  // Combine all classes into 1
@@ -44,6 +47,7 @@ export type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'tertiary',
   block?: boolean
   icon?: ReactNode; //  Icon is now a ReactNode, so it can accept strings or React elements
+  size?: 'small' | 'medium' | 'large';  
 };
 
 export default Button;
