@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import clsx from 'clsx';
-import styles from './Button.module.css';
+import styles from './Button.module.scss';
 
 
 /**
@@ -19,19 +19,24 @@ const Button = ({
   size = 'medium'
 }: ButtonProps) => {
 
+  const blockClass    = block ? styles.block : ''; // Assign block class if button is a block
   let btnVariantClass = '';
+  let btnSizeClass    = '';
 
-  switch(variant) {
+  switch(variant) { // Compute the right variant styling
     case 'primary': btnVariantClass = styles.primary; break;
     case 'secondary': btnVariantClass = styles.secondary; break;
     case 'tertiary': btnVariantClass = styles.tertiary; break;
   }
-//          size === 'small' && styles.small,
-//         size === 'medium' && styles.medium, 
- //         size === 'large' && styles.large
 
-  const blockClass = block ? styles.block : '';            // Assign block class if button is a block
-  const btnClassName = `btn ${blockClass} ${btnVariantClass} ${className}`;  // Combine all classes into 1
+  switch(size) {  // Compute the right size styling
+    case 'small': btnSizeClass = styles.small; break;
+    case 'medium': btnSizeClass = styles.medium; break;
+    case 'large': btnSizeClass = styles.large; break;
+  }
+
+  // Combine all classes into 1
+  const btnClassName = `btn ${blockClass} ${btnVariantClass} ${btnSizeClass} ${className}`;  
 
   return (
     <button className={clsx(styles.btn, btnClassName, variant === 'primary' && styles.primary)}>
