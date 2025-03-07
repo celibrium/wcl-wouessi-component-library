@@ -1,10 +1,31 @@
 import React from 'react';
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react'; 
 import "../src/App.css"; // Ensure global styles are loaded
+
+
+/**
+ * Customizing the story's viewport to center components on the page while allowing them to strech in all directions.
+ * ---------------------------
+ */
+(() => {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    #storybook-root {
+      width: 100%;
+      min-height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      box-sizing: border-box;
+    }
+  `;
+  document.head.appendChild(style);
+})();
 
 const preview: Preview = {
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
     controls: {
       matchers: {
        color: /(background|color)$/i,
@@ -35,4 +56,4 @@ const preview: Preview = {
   ],
 };
 
-export default preview;
+export default preview; 
