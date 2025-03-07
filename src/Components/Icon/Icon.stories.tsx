@@ -1,5 +1,5 @@
-import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
+import { iconOptions } from "../_export-helpers";
 import Icon from "./Icon";
 
 export default {
@@ -10,7 +10,7 @@ export default {
       control: {
         type: "select",
       },
-      options: ["ChatsTeardrop", "SpeakerHigh", "Megaphone", "CaretCircleRight"],
+      options: iconOptions,
       defaultValue: "ChatsTeardrop", // Ensure a default value is set
     },
     size: { control: { type: "number", min: 8, max: 100 } },
