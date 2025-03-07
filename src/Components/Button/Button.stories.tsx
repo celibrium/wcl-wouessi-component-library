@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import Button, { ButtonProps } from "./Button";
 
-const ExampleIcon = () => <span role="img" aria-label="star">⭐</span>;
+// const ExampleIcon = () => <span role="img" aria-label="star">⭐</span>;
 
 
 export default {
@@ -9,7 +9,7 @@ export default {
   component: Button,
   argTypes: {
     children: { control: 'text' },
-    variant: { control: 'radio', options: ['primary', 'secondary'] },
+    variant: { control: 'radio', options: ['primary', 'secondary', 'tertiary'] },
     size: {
       control: { type: 'radio' },
       options: ['small', 'medium', 'large'],
@@ -35,31 +35,30 @@ export const Small = Template.bind({});
 Small.args = {
   children: "Commit without compromise",
   variant: "primary",
+  size: 'small',
   block: false,
 };
 
-export const ButtonWithIcon: Story = {
-  args: {
-    children: 'Button with Icon',
-    variant: 'primary',
-    icon: <ExampleIcon />, 
-  },
+export const Medium = Template.bind({});
+Medium.args = {
+  children: "Commit without compromise",
+  variant: 'primary',
+  size: 'medium',
+  block: false,
 };
 
-export const Small: Story = {
-  args: {
-    children: 'Small Button',
-    variant: 'primary',
-    size: 'small',
-    icon: <ExampleIcon />, 
-  },
+export const Large = Template.bind({});
+Large.args = {
+  children: "Commit without compromise",
+  variant: 'primary',
+  size: 'large',
+  block: false,
 };
 
-export const Large: Story = {
-  args: {
-    children: 'Large Button',
-    variant: 'primary',
-    size: 'large',
-    icon: <ExampleIcon />,
-  },
-};
+// export const ButtonWithIcon: Story = {
+//   args: {
+//     children: 'Button with Icon',
+//     variant: 'primary',
+//     icon: <ExampleIcon />, 
+//   },
+// };
