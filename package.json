@@ -30,6 +30,7 @@
     "@storybook/react": "^8.6.0",
     "@storybook/react-vite": "^8.6.0",
     "@storybook/test": "^8.6.0",
+    "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
@@ -49,7 +50,7 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",
     "vite-plugin-svgr": "^4.3.0",
-    "vitest": "^3.0.7"
+    "vitest": "^3.0.8"
   },
   "eslintConfig": {
     "extends": [

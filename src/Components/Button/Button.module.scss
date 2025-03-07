@@ -43,3 +43,23 @@
   height: 1;
 
 }
+
+.iconOnly {
+  border: none;
+  background: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconOnly:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.largeIcon {
+  width: 150px; 
+  height: 150px;
+  fill: #2B03A2; 
+}
