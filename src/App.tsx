@@ -12,6 +12,7 @@ const Route1 = () => (
     </nav>
 
     <Button icon="SpeakerHigh">heyyyyyyyy</Button>
+    <Button as="icon button">Button icon</Button>
     <p>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magnam sint molestias. Aliquid, nihil. Quisquam nisi ullam excepturi vel sequi, fugiat iusto, totam dolores architecto expedita, laudantium quam iste dolore.</p>
   </div>
 );

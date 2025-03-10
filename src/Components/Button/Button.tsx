@@ -54,6 +54,12 @@ const Button = ({
                         ${btnSizeClass} 
                         ${btnIconTransformClass} 
                         ${className}`;  
+                        
+
+  // // RENDER ANCHOR HERE 
+  // if (as==='link') {
+  //   return ...
+  // }
 
   return (
     <button className={btnClassName}>
