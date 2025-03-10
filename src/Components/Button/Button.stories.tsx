@@ -10,10 +10,6 @@ export default {
   argTypes: {
     children: { control: 'text' },
     variant: { control: 'radio', options: ['primary', 'secondary', 'tertiary'] },
-    size: {
-      control: { type: 'radio' },
-      options: ['small', 'medium', 'large'],
-    },
     icon: { control: 'object' }, // 
     block: {
       control: "boolean",
