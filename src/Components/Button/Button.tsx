@@ -22,15 +22,16 @@ import styles from './Button.module.scss';
  */
 const Button = ({ 
   children, 
-  icon, 
+  hasIcon, 
   className = '', 
   variant = 'primary', 
-  block = false,
+  isBlock = false,
   as = 'button',
-  size = 'medium'
+  size = 'medium',
+  href
 }: ButtonProps) => {
 
-  const blockClass              = block ? styles.block : ''; // Assign block class if button is a block
+  const blockClass              = isBlock ? styles.block : ''; // Assign block class if button is a block
   const btnIconTransformClass   = as === 'icon button' ? styles.btnIcon : '';
   let btnVariantClass           = '';
   let btnSizeClass              = '';
@@ -57,14 +58,15 @@ const Button = ({
                         
 
   // // RENDER ANCHOR HERE 
-  // if (as==='link') {
-  //   return ...
+  if (as === 'link') {
+    return <a href={href} className={btnClassName}>{children}</a>;
+  }
   // }
 
   return (
     <button className={btnClassName}>
       {children}
-      {(icon || as === 'icon button') && <Icon name={icon} />}
+      {(hasIcon || as === 'icon button') && <Icon name={hasIcon} />}
     </button>
   );
 };
@@ -73,10 +75,12 @@ export type ButtonProps = {
   children: ReactNode;
   className?: string;
   variant?: 'primary' | 'secondary' | 'tertiary';
-  block?: boolean; 
-  as?: 'button' | 'icon button';
-  icon?: keyof typeof iconList;
+  isBlock?: boolean; 
+  as?: 'button' | 'icon button' | 'link';  // Added "link" option
+  hasIcon?: keyof typeof iconList;
   size?: 'small' | 'medium' | 'large';  
+  href?: string; // String for links
 };
+
 
 export default Button;
