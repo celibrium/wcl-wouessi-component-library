@@ -10,11 +10,19 @@ export default {
   argTypes: {
     children: { control: 'text' },
     variant: { control: 'radio', options: ['primary', 'secondary', 'tertiary'] },
-    icon: { control: 'object' }, // 
-    block: {
+    hasIcon: { control: 'object' }, 
+    href: {
+      control: "text",
+      description: "URL for the link (only used when as='link')",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "undefined" },
+      },
+    },
+    isBlock: {
       control: "boolean",
       defaultValue: false,
-      description: "---- block description ----",
+      description: "---- isBlock description ----",
       table: {
         type: { summary: "boolean" }, // Add type summary for documentation
         defaultValue: { summary: "false" }, // Optional: Show default value
@@ -32,7 +40,7 @@ Small.args = {
   children: "Commit without compromise",
   variant: "primary",
   size: 'small',
-  block: false,
+  isBlock: false,
 };
 
 export const Medium = Template.bind({});
@@ -40,7 +48,7 @@ Medium.args = {
   children: "Commit without compromise",
   variant: 'primary',
   size: 'medium',
-  block: false,
+  isBlock: false,
 };
 
 export const Large = Template.bind({});
@@ -48,27 +56,34 @@ Large.args = {
   children: "Commit without compromise",
   variant: 'primary',
   size: 'large',
-  block: false,
+  isBlock: false,
 };
 
 // Updated to Incorporate Icon Story for Buttons
 export const IconButton = Template.bind({});
 IconButton.args = {
   as: 'icon button',
-  icon: Object.keys(iconList)[0] as keyof typeof iconList, 
+  hasIcon: Object.keys(iconList)[0] as keyof typeof iconList, 
 };
 
 IconButton.argTypes = {
-  icon: {
+  hasIcon: {
     control: { type: 'select' },
     options: Object.keys(iconList) as (keyof typeof iconList)[], 
   },
   children: { table: { disable: true } },
   variant: { table: { disable: true } }, 
   size: { table: { disable: true } }, 
-  block: { table: { disable: true } }, 
+  isBlock: { table: { disable: true } }, 
 };
 
+export const LinkButton = Template.bind({});
+LinkButton.args = {
+  children: "Test Link",
+  as: "link",
+  href: "https://www.google.com", 
+  className: "custom-link-class", 
+};
 
 // export const ButtonWithIcon: Story = {
 //   args: {
